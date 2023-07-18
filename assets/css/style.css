@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #1F2D16;
+  color: #3a2005;
   text-decoration: none;
 }
 
@@ -122,7 +122,7 @@ h6 {
 }
 
 #header .profile .social-links a:hover {
-  background: #76704C;
+  background: #3a2005;
   color: #fff;
   text-decoration: none;
 }
@@ -190,7 +190,7 @@ h6 {
 .nav-menu .active i,
 .nav-menu .active:focus i,
 .nav-menu li:hover>a i {
-  color: #1F2D16;
+  color: #3a2005;
 }
 
 /* Mobile Navigation */
@@ -322,7 +322,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #1F2D16;
+  background: #3a2005;
   bottom: 0;
   left: 0;
 }
@@ -358,7 +358,7 @@ section {
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: #1F2D16;
+  color: #3a2005;
   line-height: 0;
 }
 
@@ -381,7 +381,7 @@ section {
 .facts .count-box i {
   display: block;
   font-size: 44px;
-  color: #1F2D16;
+  color: #3a2005;
   float: left;
   line-height: 0;
 }
@@ -451,7 +451,7 @@ section {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #1F2D16;
+  background-color: #3a2005;
 }
 
 /*--------------------------------------------------------------
@@ -547,7 +547,7 @@ section {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  color: #1F2D16;
+  color: #3a2005;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -637,11 +637,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #1F2D16;
+  border: 1px solid #3a2005;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #1F2D16;
+  background-color: #3a2005;
 }
 
 .portfolio-details .portfolio-info {
@@ -712,7 +712,7 @@ section {
 }
 
 .services .icon-box:hover .icon i {
-  color: #1F2D16;
+  color: #3a2005;
 }
 
 .services .title {
@@ -727,7 +727,7 @@ section {
 }
 
 .services .title a:hover {
-  color: #1F2D16;
+  color: #3a2005;
 }
 
 .services .description {
@@ -821,11 +821,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #1F2D16;
+  border: 1px solid #3a2005;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #1F2D16;
+  background-color: #3a2005;
 }
 
 /*--------------------------------------------------------------
@@ -895,7 +895,7 @@ section {
 }
 
 .contact .info .social-links a:hover {
-  background: #1F2D16;
+  background: #3a2005;
   color: #fff;
 }
 
@@ -990,7 +990,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #1F2D16;
+  background: #3a2005;
   border: 0;
   padding: 10px 24px;
   color: #fff;
