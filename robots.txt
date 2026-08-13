@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: /inner-page.html
 Disallow: /portfolio-details.html
-Disallow: /v2/
