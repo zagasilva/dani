@@ -96,12 +96,23 @@
     .navmenu {
       order: 3; flex: 1 1 100%; min-width: 0;
       display: flex; align-items: center; flex-wrap: nowrap;
-      overflow-x: auto; gap: 20px; padding-bottom: 2px;
-      scrollbar-width: none;
+      gap: 20px; padding-bottom: 2px;
     }
-    .navmenu::-webkit-scrollbar { display: none; }
     .navmenu a { font-size: 15px; font-weight: 500; color: #6B6052; white-space: nowrap; }
     .navmenu a:hover { color: var(--terracota); }
+
+    /* Botão de menu: só existe em ecrãs pequenos, e só com JS ativo */
+    .nav-toggle {
+      display: none; order: 2;
+      width: 44px; height: 44px; flex-shrink: 0;
+      align-items: center; justify-content: center;
+      background: none; border: 1px solid var(--linha); border-radius: 12px;
+      color: var(--tinta); cursor: pointer; padding: 0;
+    }
+    .nav-toggle svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+    .nav-toggle .icon-close { display: none; }
+    .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+    .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
 
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 12px;
@@ -118,22 +129,39 @@
     .link-underline { font-weight: 600; font-size: 17px; color: var(--terracota); border-bottom: 1.5px solid #D8C0AE; padding-bottom: 4px; }
     .link-underline:hover { border-bottom-color: var(--terracota); }
 
-    /* ── Hero ── */
+    /* ── Hero ──
+       Coluna única em mobile (texto → retrato → botões → números);
+       duas colunas a partir de 880px, com o retrato à direita. */
     .hero {
-      padding: clamp(38px, 6vw, 104px) clamp(20px, 4vw, 32px) clamp(56px, 8vw, 116px);
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: clamp(40px, 5vw, 72px); align-items: center;
+      padding: clamp(30px, 6vw, 104px) clamp(20px, 4vw, 32px) clamp(56px, 8vw, 116px);
+      display: grid; gap: clamp(28px, 5vw, 40px);
+    }
+    @media (min-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+          "copy    portrait"
+          "actions portrait"
+          "stats   portrait";
+        align-content: center;
+        column-gap: clamp(40px, 5vw, 72px);
+      }
+      .hero-copy { grid-area: copy; }
+      .hero .portrait-wrap { grid-area: portrait; align-self: center; }
+      .hero-actions { grid-area: actions; }
+      .hero .stats { grid-area: stats; }
     }
     .kicker { font-weight: 700; font-size: clamp(11px, 1.4vw, 13px); letter-spacing: 2.6px; color: var(--terracota); margin-bottom: 22px; }
     .hero h1 { font-size: clamp(38px, 6vw, 70px); line-height: 1.06; letter-spacing: -1px; margin-bottom: 30px; }
     .lead { font-size: clamp(17px, 2vw, 20px); line-height: 1.66; color: var(--texto); margin: 0 0 clamp(30px, 4vw, 42px); max-width: 520px; }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+    /* Três colunas iguais: nunca deixa um número órfão numa segunda linha. */
     .stats {
-      display: flex; flex-wrap: wrap; gap: clamp(26px, 4vw, 40px);
-      margin-top: clamp(44px, 5vw, 64px); padding-top: 34px; border-top: 1px solid #E1D3C1;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 4vw, 40px);
+      margin-top: clamp(8px, 5vw, 24px); padding-top: clamp(26px, 3vw, 34px); border-top: 1px solid #E1D3C1;
     }
-    .stat-n { font-family: var(--serif); font-size: 34px; font-weight: 500; color: var(--terracota); line-height: 1; }
-    .stat-l { font-size: 14px; color: var(--texto-suave); margin-top: 8px; }
+    .stat-n { font-family: var(--serif); font-size: clamp(27px, 7vw, 34px); font-weight: 500; color: var(--terracota); line-height: 1; }
+    .stat-l { font-size: clamp(12px, 3.2vw, 14px); line-height: 1.35; color: var(--texto-suave); margin-top: 8px; }
     .portrait-wrap { position: relative; }
     .portrait-ring {
       position: absolute; top: -46px; right: -46px; width: 220px; height: 220px;
@@ -141,7 +169,9 @@
     }
     .portrait {
       position: relative; z-index: 1; aspect-ratio: 4/5;
-      border-radius: 200px 200px 18px 18px; overflow: hidden; background: #EBDCCC;
+      border-radius: clamp(120px, 40vw, 200px) clamp(120px, 40vw, 200px) 18px 18px;
+      overflow: hidden; background: #EBDCCC;
+      max-width: 460px; margin-inline: auto;
     }
     .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
 
@@ -278,14 +308,52 @@
     }
     .float-wa:hover { background: var(--terracota-escuro); color: var(--areia); }
     .float-wa svg { width: 28px; height: 28px; fill: currentColor; }
-    @media (max-width: 700px) {
-      .float-wa { display: flex; }
+
+    /* ── Mobile ── */
+    @media (max-width: 879px) {
+      /* A primeira linha (logo · CTA · menu) cabe sempre; o painel de
+         navegação, quando aberto, ocupa uma segunda linha inteira. */
+      .header-inner { flex-wrap: wrap; gap: 10px; padding: 10px clamp(16px, 4vw, 24px); }
+      .brand img { width: 38px; height: 38px; }
+      .btn-nav { font-size: 14px; padding: 10px 16px; }
+
+      /* Com JS: os links passam para um painel; sem JS ficam visíveis em linha. */
+      .js .nav-toggle { display: flex; }
+      .js .navmenu {
+        order: 4; flex: 1 0 100%; width: 100%;
+        display: none; flex-direction: column; align-items: stretch;
+        gap: 0; padding: 6px 0 10px;
+        border-top: 1px solid var(--linha); margin-top: 6px;
+      }
+      .js .navmenu.is-open { display: flex; }
+      .js .navmenu a { font-size: 17px; padding: 14px 4px; border-bottom: 1px solid rgba(231, 218, 202, .6); }
+      .js .navmenu a:last-child { border-bottom: none; }
+
+      .hero h1 { letter-spacing: -.5px; }
+      .hero-actions { gap: 14px; }
+      .hero-actions .btn-hero { width: 100%; padding: 18px 24px; }
       .portrait-ring { display: none; }
+      /* Retrato compacto: não pode ocupar mais do que meio ecrã. */
+      .portrait { aspect-ratio: 1/1; max-width: 300px; border-radius: 150px 150px 18px 18px; }
+      .sobre-foto { max-width: 240px; }
+      .quote { border-radius: 24px; }
+      .cta-actions .btn { width: 100%; }
+      /* Espaço para o botão flutuante não tapar o rodapé */
+      .footer-bottom { padding-bottom: 56px; }
+    }
+
+    @media (max-width: 700px) {
+      .float-wa { display: flex; bottom: max(18px, env(safe-area-inset-bottom)); }
+    }
+
+    @media (max-width: 380px) {
+      .brand span { display: none; }
     }
   </style>
 </head>
 
 <body>
+  <script>document.documentElement.className += ' js';</script>
   <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
 
   <!-- ===== NAV ===== -->
@@ -295,13 +363,17 @@
         <img src="assets/logo-dark.png" alt="" width="42" height="42">
         <span>Daniela Silva</span>
       </a>
-      <nav class="navmenu" aria-label="Navegação principal">
+      <nav class="navmenu" id="navmenu" aria-label="Navegação principal">
         <a href="#sobre">Sobre mim</a>
         <a href="#pratica">Prática clínica</a>
         <a href="#primeira-sessao">Primeira sessão</a>
         <a href="#perguntas">Perguntas</a>
       </nav>
       <a class="btn btn-primary btn-nav" href="https://wa.me/351913572171">Marcar consulta</a>
+      <button class="nav-toggle" type="button" aria-controls="navmenu" aria-expanded="false" aria-label="Abrir menu">
+        <svg class="icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg>
+      </button>
     </div>
   </header>
 
@@ -309,33 +381,36 @@
 
     <!-- ===== HERO ===== -->
     <section id="top" class="wrap hero">
-      <div>
+      <div class="hero-copy">
         <p class="kicker">PSICÓLOGA CLÍNICA · CONSULTAS ONLINE</p>
         <h1>A tua dor é real. E merece um espaço onde caiba toda.</h1>
         <p class="lead">Acompanho mulheres e casais em endometriose, infertilidade e saúde sexual e reprodutiva. Consultas online, em português.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary btn-hero" href="https://wa.me/351913572171">Marcar primeira consulta →</a>
-          <a class="link-underline" href="#pratica">Ver áreas de acompanhamento</a>
-        </div>
-        <div class="stats">
-          <div>
-            <div class="stat-n">2018</div>
-            <div class="stat-l">Psicóloga desde</div>
-          </div>
-          <div>
-            <div class="stat-n">6</div>
-            <div class="stat-l">Áreas de especialização</div>
-          </div>
-          <div>
-            <div class="stat-n">Online</div>
-            <div class="stat-l">De qualquer lugar</div>
-          </div>
-        </div>
       </div>
+
       <div class="portrait-wrap">
         <div class="portrait-ring" aria-hidden="true"></div>
         <div class="portrait">
           <img src="assets/retrato.jpg" alt="Daniela Silva, psicóloga clínica e da saúde" width="600" height="750">
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-hero" href="https://wa.me/351913572171">Marcar primeira consulta →</a>
+        <a class="link-underline" href="#pratica">Ver áreas de acompanhamento</a>
+      </div>
+
+      <div class="stats">
+        <div>
+          <div class="stat-n">2018</div>
+          <div class="stat-l">Psicóloga desde</div>
+        </div>
+        <div>
+          <div class="stat-n">6</div>
+          <div class="stat-l">Áreas de especialização</div>
+        </div>
+        <div>
+          <div class="stat-n">Online</div>
+          <div class="stat-l">De qualquer lugar</div>
         </div>
       </div>
     </section>
@@ -580,6 +655,29 @@
   <a class="float-wa" href="https://wa.me/351913572171" aria-label="Contactar por WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.35c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.26 8.24z"/></svg>
   </a>
+
+  <script>
+    // Menu mobile: abre/fecha o painel e fecha-o ao seguir uma ligação.
+    (function () {
+      var btn = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('navmenu');
+      if (!btn || !nav) return;
+      function setOpen(open) {
+        nav.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      }
+      btn.addEventListener('click', function () {
+        setOpen(btn.getAttribute('aria-expanded') !== 'true');
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
+  </script>
 
   <script type="application/ld+json">
   {
