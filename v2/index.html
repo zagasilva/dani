@@ -247,6 +247,34 @@
     .passo h3 { font-size: 26px; line-height: 1.2; color: var(--tinta); }
     .passo p { font-size: 16px; line-height: 1.62; color: var(--texto); margin: 0; }
 
+    /* ── Valores ── */
+    .precos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 26px; align-items: stretch; }
+    .preco {
+      background: var(--areia-clara); border: 1px solid #EDE1D2; border-radius: 24px;
+      padding: clamp(28px, 3vw, 38px) clamp(24px, 3.2vw, 40px);
+      display: flex; flex-direction: column;
+    }
+    .preco-tipo { font-weight: 700; font-size: 12px; letter-spacing: 2.6px; color: var(--terracota); margin-bottom: 18px; }
+    .preco h3 { font-size: clamp(26px, 3vw, 32px); line-height: 1.15; color: var(--tinta); margin-bottom: 6px; }
+    .preco-dur { font-size: 16px; color: var(--texto-suave); }
+    .preco-val {
+      font-family: var(--serif); font-size: clamp(38px, 5vw, 48px); font-weight: 500;
+      color: var(--terracota); line-height: 1; margin-top: auto; padding-top: 26px;
+    }
+    .preco-val span { font-family: var(--sans); font-size: 15px; font-weight: 500; color: var(--texto-suave); }
+    .preco p { font-size: 16px; line-height: 1.62; color: var(--texto); margin: 16px 0 0; }
+
+    .condicoes {
+      margin-top: 26px; background: var(--areia-clara); border: 1px solid #EDE1D2; border-radius: 24px;
+      padding: clamp(28px, 3vw, 38px) clamp(24px, 3.2vw, 40px);
+      display: grid; grid-template-columns: 1fr; gap: clamp(24px, 3vw, 40px);
+    }
+    /* 1 → 2 → 4 colunas: nunca deixa uma condição sozinha numa linha. */
+    @media (min-width: 620px) { .condicoes { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1080px) { .condicoes { grid-template-columns: repeat(4, 1fr); } }
+    .condicao h4 { font-family: var(--serif); font-weight: 500; font-size: 21px; line-height: 1.25; color: var(--tinta); margin: 0 0 10px; }
+    .condicao p { font-size: 16px; line-height: 1.62; color: var(--texto); margin: 0; }
+
     /* ── FAQ ── */
     .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(44px, 5vw, 80px); align-items: start; }
     .faq-intro h2 { font-size: clamp(31px, 4.2vw, 48px); line-height: 1.12; margin-bottom: 26px; }
@@ -367,6 +395,7 @@
         <a href="#sobre">Sobre mim</a>
         <a href="#pratica">Prática clínica</a>
         <a href="#primeira-sessao">Primeira sessão</a>
+        <a href="#valores">Valores</a>
         <a href="#perguntas">Perguntas</a>
       </nav>
       <a class="btn btn-primary btn-nav" href="https://wa.me/351913572171">Marcar consulta</a>
@@ -395,6 +424,8 @@
       </div>
 
       <div class="hero-actions">
+        <!-- Quando a agenda do Google Calendar abrir, substituir o href por esse link
+             de marcação (aqui e nos restantes botões "Marcar consulta"). -->
         <a class="btn btn-primary btn-hero" href="https://wa.me/351913572171">Marcar primeira consulta →</a>
         <a class="link-underline" href="#pratica">Ver áreas de acompanhamento</a>
       </div>
@@ -546,18 +577,63 @@
           <div class="passo">
             <div class="passo-top"><div class="passo-n">02</div><div class="passo-line"></div></div>
             <h3>Agendamento</h3>
-            <p>Combinamos dia e hora e recebes o link da videochamada. Não precisas de instalar nada.</p>
+            <p>Combinamos dia e hora e recebes o link da videochamada por Google Meet. Não precisas de instalar nada.</p>
           </div>
           <div class="passo">
             <div class="passo-top"><div class="passo-n">03</div><div class="passo-line"></div></div>
             <h3>Primeira sessão</h3>
-            <p>Cerca de 50 minutos para conhecer a tua história, o que te trouxe até aqui e o que esperas do acompanhamento.</p>
+            <p>60 minutos para conhecer a tua história, o que te trouxe até aqui e o que esperas do acompanhamento.</p>
           </div>
           <div class="passo">
             <div class="passo-top"><div class="passo-n">04</div><div class="passo-line"></div></div>
             <h3>Plano conjunto</h3>
             <p>Definimos objetivos e frequência das sessões. O plano é teu e vai sendo ajustado ao teu ritmo.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VALORES ===== -->
+    <section id="valores" class="wrap section">
+      <div class="section-head">
+        <p class="eyebrow">VALORES E MARCAÇÕES</p>
+        <h2>Preços claros, sem letras pequenas</h2>
+        <p>Todas as consultas são online, por videochamada. Recebes o link do Google Meet depois da marcação — não precisas de instalar nada.</p>
+      </div>
+
+      <div class="precos">
+        <div class="preco">
+          <div class="preco-tipo">CONSULTA INDIVIDUAL</div>
+          <h3>Psicologia</h3>
+          <div class="preco-dur">60 minutos · online</div>
+          <p>Acompanhamento individual em endometriose, infertilidade, dispareunia, gravidez e parentalidade.</p>
+          <div class="preco-val">60&nbsp;€ <span>/ sessão</span></div>
+        </div>
+        <div class="preco">
+          <div class="preco-tipo">CONSULTA DE CASAL</div>
+          <h3>Terapia de casal</h3>
+          <div class="preco-dur">90 minutos · online</div>
+          <p>Para casais que procuram recuperar comunicação, intimidade e apoio mútuo, com ou sem diagnóstico associado.</p>
+          <div class="preco-val">80&nbsp;€ <span>/ sessão</span></div>
+        </div>
+      </div>
+
+      <div class="condicoes">
+        <div class="condicao">
+          <h4>Pagamento</h4>
+          <p>Por MB WAY ou transferência bancária. Envio os dados no momento da marcação; basta devolveres o comprovativo por email.</p>
+        </div>
+        <div class="condicao">
+          <h4>Prazos</h4>
+          <p>A primeira consulta é paga nas 24 horas seguintes à marcação, para garantir a vaga. As seguintes, até 24 horas antes da sessão.</p>
+        </div>
+        <div class="condicao">
+          <h4>Recibos</h4>
+          <p>Enviados após cada consulta, para que os possas apresentar ao teu seguro ou subsistema de saúde.</p>
+        </div>
+        <div class="condicao">
+          <h4>Cancelamentos</h4>
+          <p>Com pelo menos 24 horas de antecedência, remarcamos sem custo. Fora desse prazo, ou em caso de não comparência, não há lugar a reembolso.</p>
         </div>
       </div>
     </section>
@@ -578,11 +654,19 @@
           </details>
           <details class="faq">
             <summary>Quanto tempo dura cada sessão?</summary>
-            <p>Cada sessão tem cerca de 50 minutos. A frequência é definida em conjunto na primeira sessão — habitualmente semanal ou quinzenal no início, espaçando à medida que os objetivos vão sendo atingidos.</p>
+            <p>A consulta individual tem 60 minutos e a consulta de casal 90 minutos. A frequência é definida em conjunto na primeira sessão — habitualmente semanal ou quinzenal no início, espaçando à medida que os objetivos vão sendo atingidos.</p>
           </details>
           <details class="faq">
             <summary>Qual é o valor da consulta?</summary>
-            <p>O valor é indicado no primeiro contacto, antes de qualquer agendamento, para que possas decidir com toda a informação. Envio também os dados necessários para reembolso, quando aplicável.</p>
+            <p>A consulta individual custa 60&nbsp;€ (60 minutos) e a consulta de casal 80&nbsp;€ (90 minutos). O recibo é enviado após cada sessão, para que o possas apresentar ao teu seguro ou subsistema de saúde, quando aplicável.</p>
+          </details>
+          <details class="faq">
+            <summary>Como e quando se faz o pagamento?</summary>
+            <p>Por MB WAY ou transferência bancária; envio os dados no momento da marcação. A primeira consulta é paga nas 24 horas seguintes à marcação, para garantir a vaga, e as consultas de seguimento até 24 horas antes da sessão. Basta enviares o comprovativo por email.</p>
+          </details>
+          <details class="faq">
+            <summary>E se precisar de desmarcar?</summary>
+            <p>Alterações e cancelamentos devem ser feitos com pelo menos 24 horas de antecedência — nesse caso remarcamos sem qualquer custo. Cancelamentos fora deste prazo, ou a não comparência, não dão direito a reembolso nem a reajuste do valor da sessão.</p>
           </details>
           <details class="faq">
             <summary>O que preciso para uma consulta online?</summary>
@@ -690,6 +774,21 @@
     "email": "psi.danielapdsilva@gmail.com",
     "areaServed": "PT",
     "availableLanguage": "pt-PT",
+    "priceRange": "60€–80€",
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Consulta de psicologia individual (60 min, online)" },
+        "price": "60",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Consulta de terapia de casal (90 min, online)" },
+        "price": "80",
+        "priceCurrency": "EUR"
+      }
+    ],
     "sameAs": [
       "https://instagram.com/psi.danielapdsilva/",
       "https://www.linkedin.com/in/danielapdsilva/",
