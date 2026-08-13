@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Versão de pré-visualização: não indexar enquanto não for aprovada -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Daniela Silva · Psicóloga Clínica e da Saúde — Endometriose, Infertilidade e Saúde Reprodutiva</title>
+  <meta name="description" content="Psicóloga Clínica e da Saúde desde 2018. Acompanhamento psicológico online em endometriose, infertilidade, dispareunia, gravidez, parentalidade e terapia de casal.">
+  <meta name="keywords" content="Psicologia, Endometriose, Infertilidade, Gravidez, Parentalidade, Dispareunia, Terapia de Casal, Psicóloga online, Portugal">
+  <meta name="author" content="Daniela Silva">
+  <meta name="theme-color" content="#875240">
+
+  <!-- Open Graph / redes sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="Daniela Silva · Psicóloga">
+  <meta property="og:title" content="Daniela Silva · Psicóloga Clínica e da Saúde">
+  <meta property="og:description" content="Acompanho mulheres e casais em endometriose, infertilidade e saúde sexual e reprodutiva. Consultas online, em português.">
+  <meta property="og:image" content="https://www.danielapdsilva.com/v2/assets/logo-brown.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --areia: #F5EDE3;
+      --areia-clara: #FBF6EE;
+      --terracota: #875240;
+      --terracota-escuro: #6B3E30;
+      --rosa: #E8CDBE;
+      --tinta: #3B322B;
+      --texto: #574D40;
+      --texto-suave: #8A7A68;
+      --linha: #E7DACA;
+      --serif: 'Newsreader', Georgia, serif;
+      --sans: 'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--areia);
+      color: var(--tinta);
+      font-family: var(--sans);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--terracota); text-decoration: none; transition: color .18s ease, background-color .18s ease, border-color .18s ease; }
+    a:hover { color: var(--terracota-escuro); }
+    ::selection { background: var(--rosa); }
+    :focus-visible { outline: 2px solid var(--terracota); outline-offset: 3px; border-radius: 4px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
+    }
+
+    .wrap { max-width: 1200px; margin: 0 auto; }
+    .eyebrow { font-weight: 700; font-size: 13px; letter-spacing: 3.4px; color: var(--terracota); margin-bottom: 26px; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; text-wrap: balance; }
+
+    /* ── Skip link ── */
+    .skip {
+      position: absolute; left: -9999px; top: 0; z-index: 100;
+      background: var(--terracota); color: var(--areia);
+      padding: 12px 20px; border-radius: 0 0 10px 0; font-weight: 700;
+    }
+    .skip:focus { left: 0; color: var(--areia); }
+
+    /* ── Nav ── */
+    .header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(245, 237, 227, .94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--linha);
+    }
+    .header-inner {
+      padding: 12px clamp(16px, 4vw, 24px);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 8px clamp(16px, 3vw, 28px);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .brand img { width: 42px; height: 42px; }
+    .brand span { font-family: var(--serif); font-weight: 500; font-size: 18px; color: var(--tinta); letter-spacing: .2px; white-space: nowrap; }
+    .navmenu {
+      order: 3; flex: 1 1 100%; min-width: 0;
+      display: flex; align-items: center; flex-wrap: nowrap;
+      overflow-x: auto; gap: 20px; padding-bottom: 2px;
+      scrollbar-width: none;
+    }
+    .navmenu::-webkit-scrollbar { display: none; }
+    .navmenu a { font-size: 15px; font-weight: 500; color: #6B6052; white-space: nowrap; }
+    .navmenu a:hover { color: var(--terracota); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+      font-weight: 700; border-radius: 999px; white-space: nowrap;
+    }
+    .btn-primary { background: var(--terracota); color: var(--areia); }
+    .btn-primary:hover { background: var(--terracota-escuro); color: var(--areia); }
+    .btn-nav { order: 2; flex-shrink: 0; font-size: 15px; padding: 11px 22px; }
+    .btn-hero { font-size: 17px; padding: 20px 38px; }
+    .btn-light { background: var(--areia); color: var(--terracota); font-size: 17px; padding: 20px 40px; }
+    .btn-light:hover { background: #fff; color: var(--terracota-escuro); }
+    .btn-ghost { border: 1.5px solid rgba(248, 241, 232, .5); color: #F8F1E8; font-size: 17px; padding: 20px 40px; }
+    .btn-ghost:hover { border-color: #F8F1E8; color: #fff; }
+    .link-underline { font-weight: 600; font-size: 17px; color: var(--terracota); border-bottom: 1.5px solid #D8C0AE; padding-bottom: 4px; }
+    .link-underline:hover { border-bottom-color: var(--terracota); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: clamp(38px, 6vw, 104px) clamp(20px, 4vw, 32px) clamp(56px, 8vw, 116px);
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: clamp(40px, 5vw, 72px); align-items: center;
+    }
+    .kicker { font-weight: 700; font-size: clamp(11px, 1.4vw, 13px); letter-spacing: 2.6px; color: var(--terracota); margin-bottom: 22px; }
+    .hero h1 { font-size: clamp(38px, 6vw, 70px); line-height: 1.06; letter-spacing: -1px; margin-bottom: 30px; }
+    .lead { font-size: clamp(17px, 2vw, 20px); line-height: 1.66; color: var(--texto); margin: 0 0 clamp(30px, 4vw, 42px); max-width: 520px; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+    .stats {
+      display: flex; flex-wrap: wrap; gap: clamp(26px, 4vw, 40px);
+      margin-top: clamp(44px, 5vw, 64px); padding-top: 34px; border-top: 1px solid #E1D3C1;
+    }
+    .stat-n { font-family: var(--serif); font-size: 34px; font-weight: 500; color: var(--terracota); line-height: 1; }
+    .stat-l { font-size: 14px; color: var(--texto-suave); margin-top: 8px; }
+    .portrait-wrap { position: relative; }
+    .portrait-ring {
+      position: absolute; top: -46px; right: -46px; width: 220px; height: 220px;
+      border: 2px solid #E0C8B6; border-radius: 50%; z-index: 0;
+    }
+    .portrait {
+      position: relative; z-index: 1; aspect-ratio: 4/5;
+      border-radius: 200px 200px 18px 18px; overflow: hidden; background: #EBDCCC;
+    }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+
+    /* ── Secções ── */
+    .section { padding: clamp(72px, 9vw, 118px) clamp(20px, 4vw, 32px); }
+    .section-head { max-width: 660px; margin-bottom: clamp(44px, 6vw, 70px); }
+    .section-head h2 { font-size: clamp(32px, 4.5vw, 52px); line-height: 1.12; margin-bottom: 22px; }
+    .section-head p { font-size: clamp(17px, 2vw, 19px); line-height: 1.7; color: var(--texto); margin: 0; }
+
+    .sobre { background: var(--terracota); color: #F8F1E8; }
+    .sobre .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(44px, 5vw, 80px); align-items: start; }
+    .sobre .eyebrow { color: #E8C9B6; }
+    .sobre h2 { font-size: clamp(32px, 4.5vw, 50px); line-height: 1.14; margin-bottom: 34px; }
+    .sobre p { font-size: clamp(17px, 2vw, 19px); line-height: 1.7; color: #F0DDD1; margin: 0 0 22px; }
+    .sobre-foto { aspect-ratio: 1/1; border-radius: 50%; overflow: hidden; max-width: 330px; background: #93604D; }
+    .sobre-foto img { width: 100%; height: 100%; object-fit: cover; }
+    .card-podcast {
+      background: rgba(248, 241, 232, .1); border: 1px solid rgba(248, 241, 232, .22);
+      border-radius: 20px; padding: clamp(24px, 3vw, 32px) clamp(24px, 3vw, 34px); margin-top: 34px;
+    }
+    .card-podcast div { font-weight: 700; font-size: 12px; letter-spacing: 3px; color: #E8C9B6; margin-bottom: 14px; }
+    .card-podcast p { font-size: 17px; line-height: 1.62; color: #F8F1E8; margin: 0; }
+    .card-podcast a { color: #F8F1E8; border-bottom: 1.5px solid rgba(248, 241, 232, .5); }
+    .card-podcast a:hover { border-bottom-color: #F8F1E8; color: #fff; }
+
+    /* ── Áreas ── */
+    .areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; }
+    .area {
+      background: var(--areia-clara); border: 1px solid #EDE1D2; border-radius: 24px;
+      padding: clamp(26px, 3vw, 38px) clamp(24px, 3.2vw, 40px);
+      transition: border-color .2s ease;
+    }
+    .area:hover { border-color: #D8BCA8; }
+    .area > summary { list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 14px; }
+    .area > summary::-webkit-details-marker { display: none; }
+    .area-n { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 22px; color: #B98B6E; line-height: 1.3; }
+    .area-title { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(25px, 3vw, 30px); line-height: 1.16; color: var(--tinta); }
+    .area-teaser { display: block; font-size: 16px; line-height: 1.55; color: var(--texto); margin-top: 8px; }
+    .area-plus { font-family: var(--serif); font-size: 26px; color: #B98B6E; line-height: 1; }
+    .area[open] .area-plus::before { content: '–'; }
+    .area-plus::before { content: '+'; }
+    .area p { font-size: 17px; line-height: 1.72; color: var(--texto); margin: 22px 0 0; }
+
+    /* ── Citação ── */
+    .quote-wrap { padding: 0 clamp(20px, 4vw, 32px) clamp(72px, 9vw, 118px); }
+    .quote {
+      background: var(--rosa); border-radius: 32px;
+      padding: clamp(56px, 7vw, 96px) clamp(28px, 6vw, 80px);
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .quote .o1, .quote .o2 { position: absolute; border: 2px solid rgba(135, 82, 64, .22); border-radius: 50%; }
+    .quote .o1 { top: -90px; left: -70px; width: 280px; height: 280px; }
+    .quote .o2 { bottom: -110px; right: -60px; width: 240px; height: 240px; }
+    .quote img { position: relative; width: 88px; height: 88px; margin-bottom: 38px; }
+    .quote p {
+      position: relative; font-family: var(--serif); font-style: italic; font-weight: 400;
+      font-size: clamp(28px, 4vw, 46px); line-height: 1.3; color: var(--terracota-escuro);
+      margin: 0; max-width: 760px; text-wrap: balance;
+    }
+
+    /* ── Primeira sessão ── */
+    .passos { background: var(--areia-clara); border-top: 1px solid #EDE1D2; border-bottom: 1px solid #EDE1D2; }
+    .passos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: clamp(30px, 3vw, 24px); }
+    .passo { display: flex; flex-direction: column; gap: 18px; }
+    .passo-top { display: flex; align-items: center; gap: 14px; }
+    .passo-n {
+      width: 44px; height: 44px; border-radius: 50%; background: var(--terracota); color: var(--areia);
+      font-family: var(--serif); font-weight: 500; font-size: 21px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .passo-line { flex: 1; height: 1px; background: #E1D3C1; }
+    .passo h3 { font-size: 26px; line-height: 1.2; color: var(--tinta); }
+    .passo p { font-size: 16px; line-height: 1.62; color: var(--texto); margin: 0; }
+
+    /* ── FAQ ── */
+    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(44px, 5vw, 80px); align-items: start; }
+    .faq-intro h2 { font-size: clamp(31px, 4.2vw, 48px); line-height: 1.12; margin-bottom: 26px; }
+    .faq-intro p { font-size: clamp(17px, 2vw, 18px); line-height: 1.7; color: var(--texto); margin: 0 0 28px; }
+    .faq-list { display: flex; flex-direction: column; gap: 14px; }
+    .faq {
+      background: var(--areia-clara); border: 1px solid #EDE1D2; border-radius: 18px;
+      padding: clamp(22px, 2.6vw, 26px) clamp(22px, 2.8vw, 30px);
+      transition: border-color .2s ease;
+    }
+    .faq:hover { border-color: #D8BCA8; }
+    .faq > summary {
+      font-family: var(--serif); font-weight: 500; font-size: clamp(20px, 2.4vw, 23px);
+      line-height: 1.32; color: var(--tinta); cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; gap: 16px;
+    }
+    .faq > summary::-webkit-details-marker { display: none; }
+    .faq > summary::after { content: '+'; color: #B98B6E; flex-shrink: 0; }
+    .faq[open] > summary::after { content: '–'; }
+    .faq p { font-size: 17px; line-height: 1.72; color: var(--texto); margin: 18px 0 0; }
+
+    /* ── CTA ── */
+    .cta { background: var(--terracota); color: #F8F1E8; padding: clamp(76px, 9vw, 126px) clamp(20px, 4vw, 32px); }
+    .cta-inner { max-width: 760px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .cta img { width: 120px; height: 120px; margin-bottom: 44px; }
+    .cta h2 { font-size: clamp(34px, 5vw, 56px); line-height: 1.1; margin-bottom: 26px; }
+    .cta p { font-size: clamp(17px, 2vw, 20px); line-height: 1.66; color: #F0DDD1; margin: 0 0 clamp(30px, 4vw, 42px); max-width: 520px; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+
+    /* ── Footer ── */
+    footer { background: var(--tinta); color: #E4D8CB; padding: clamp(56px, 7vw, 76px) clamp(20px, 4vw, 32px) 44px; }
+    .footer-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(36px, 4vw, 60px); padding-bottom: 52px; border-bottom: 1px solid rgba(228, 216, 203, .18);
+    }
+    .footer-brand { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+    .footer-brand img { width: 54px; height: 54px; }
+    .footer-name { font-family: var(--serif); font-weight: 500; font-size: 20px; color: var(--areia); }
+    .footer-role { font-size: 12px; font-weight: 700; letter-spacing: 2px; color: #A89685; }
+    .footer-desc { font-size: 15px; line-height: 1.66; color: #B8A897; margin: 0; max-width: 320px; }
+    .footer-h { font-size: 12px; font-weight: 700; letter-spacing: 2.4px; color: var(--texto-suave); margin-bottom: 20px; }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { font-size: 16px; color: #E4D8CB; }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 16px; padding-top: 30px;
+    }
+    .footer-bottom .c { font-size: 14px; color: var(--texto-suave); }
+    .footer-bottom .m { font-family: var(--serif); font-style: italic; font-size: 16px; color: #A89685; }
+
+    /* ── Botão flutuante WhatsApp (mobile) ── */
+    .float-wa {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--terracota); color: var(--areia);
+      display: none; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(59, 50, 43, .28);
+    }
+    .float-wa:hover { background: var(--terracota-escuro); color: var(--areia); }
+    .float-wa svg { width: 28px; height: 28px; fill: currentColor; }
+    @media (max-width: 700px) {
+      .float-wa { display: flex; }
+      .portrait-ring { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+
+  <!-- ===== NAV ===== -->
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <img src="assets/logo-dark.png" alt="" width="42" height="42">
+        <span>Daniela Silva</span>
+      </a>
+      <nav class="navmenu" aria-label="Navegação principal">
+        <a href="#sobre">Sobre mim</a>
+        <a href="#pratica">Prática clínica</a>
+        <a href="#primeira-sessao">Primeira sessão</a>
+        <a href="#perguntas">Perguntas</a>
+      </nav>
+      <a class="btn btn-primary btn-nav" href="https://wa.me/351913572171">Marcar consulta</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ===== HERO ===== -->
+    <section id="top" class="wrap hero">
+      <div>
+        <p class="kicker">PSICÓLOGA CLÍNICA · CONSULTAS ONLINE</p>
+        <h1>A tua dor é real. E merece um espaço onde caiba toda.</h1>
+        <p class="lead">Acompanho mulheres e casais em endometriose, infertilidade e saúde sexual e reprodutiva. Consultas online, em português.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-hero" href="https://wa.me/351913572171">Marcar primeira consulta →</a>
+          <a class="link-underline" href="#pratica">Ver áreas de acompanhamento</a>
+        </div>
+        <div class="stats">
+          <div>
+            <div class="stat-n">2018</div>
+            <div class="stat-l">Psicóloga desde</div>
+          </div>
+          <div>
+            <div class="stat-n">6</div>
+            <div class="stat-l">Áreas de especialização</div>
+          </div>
+          <div>
+            <div class="stat-n">Online</div>
+            <div class="stat-l">De qualquer lugar</div>
+          </div>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait-ring" aria-hidden="true"></div>
+        <div class="portrait">
+          <img src="assets/retrato.jpg" alt="Daniela Silva, psicóloga clínica e da saúde" width="600" height="750">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre" class="section sobre">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">SOBRE MIM</p>
+          <div class="sobre-foto">
+            <img src="assets/retrato.jpg" alt="" width="600" height="600" loading="lazy">
+          </div>
+        </div>
+        <div>
+          <h2>Dedico a minha prática à saúde da mulher.</h2>
+          <p>Psicóloga Clínica e da Saúde desde 2018, com prática dedicada à saúde sexual e reprodutiva: endometriose, adenomiose, infertilidade, dispareunia, gravidez e parentalidade.</p>
+          <p>Acredito que a saúde não se esgota num diagnóstico. Valorizo a relação terapêutica acima de tudo — um espaço seguro, onde exista liberdade para sentir e clarificar todas as emoções — e trabalho sempre com base em evidência científica.</p>
+          <div class="card-podcast">
+            <div>TAMBÉM ME OUVES AQUI</div>
+            <p>Co-anfitriã do <a href="https://www.ladobetapodcast.pt/" target="_blank" rel="noopener">Lado Beta</a>, o podcast português sobre infertilidade, PMA e saúde reprodutiva, com a ginecologista Dra. Filipa Rafael.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRÁTICA CLÍNICA ===== -->
+    <section id="pratica" class="wrap section">
+      <div class="section-head">
+        <p class="eyebrow">PRÁTICA CLÍNICA</p>
+        <h2>Seis áreas, um princípio comum</h2>
+        <p>Não existem dois percursos iguais. O acompanhamento é construído a partir da tua história, não de um protocolo.</p>
+      </div>
+
+      <div class="areas">
+        <details class="area">
+          <summary>
+            <span class="area-n">01</span>
+            <span style="flex:1">
+              <span class="area-title">Endometriose</span>
+              <span class="area-teaser">Viver com menos dor e menos solidão.</span>
+            </span>
+            <span class="area-plus" aria-hidden="true"></span>
+          </summary>
+          <p>Uma das doenças mais dolorosas do mundo, com impacto profundo na qualidade de vida. Trabalhamos a gestão da dor, a aceitação do diagnóstico, a saúde reprodutiva, a autoestima e a sensação de incompreensão.</p>
+        </details>
+
+        <details class="area">
+          <summary>
+            <span class="area-n">02</span>
+            <span style="flex:1">
+              <span class="area-title">Infertilidade</span>
+              <span class="area-teaser">Atravessar a espera com apoio.</span>
+            </span>
+            <span class="area-plus" aria-hidden="true"></span>
+          </summary>
+          <p>Um percurso com impacto emocional significativo. O objetivo é reduzir o stress e a ansiedade, fortalecer a resiliência, facilitar a comunicação no casal e apoiar a tomada de decisão em cada etapa.</p>
+        </details>
+
+        <details class="area">
+          <summary>
+            <span class="area-n">03</span>
+            <span style="flex:1">
+              <span class="area-title">Dispareunia</span>
+              <span class="area-teaser">Quando o sexo dói.</span>
+            </span>
+            <span class="area-plus" aria-hidden="true"></span>
+          </summary>
+          <p>A dor nas relações sexuais afeta a saúde emocional, a autoestima e a intimidade do casal. Trabalhamos a expressão emocional, a reestruturação cognitiva e a comunicação — idealmente em equipa com ginecologia e fisioterapia pélvica.</p>
+        </details>
+
+        <details class="area">
+          <summary>
+            <span class="area-n">04</span>
+            <span style="flex:1">
+              <span class="area-title">Gravidez</span>
+              <span class="area-teaser">Espaço para o que também dói.</span>
+            </span>
+            <span class="area-plus" aria-hidden="true"></span>
+          </summary>
+          <p>Um período de mudanças profundas, muitas vezes romantizado ao ponto de não parecer haver espaço para o que dói. Ansiedade, medo do parto, imagem corporal, depressão pré e pós-parto: reconhecer é proteger.</p>
+        </details>
+
+        <details class="area">
+          <summary>
+            <span class="area-n">05</span>
+            <span style="flex:1">
+              <span class="area-title">Parentalidade</span>
+              <span class="area-teaser">Sem a pressão da educação perfeita.</span>
+            </span>
+            <span class="area-plus" aria-hidden="true"></span>
+          </summary>
+          <p>Existe uma pressão absurda sobre a “educação perfeita”. Sem fundamentalismos, exploramos estratégias que funcionem na tua realidade familiar, valorizando a estabilidade emocional de quem cuida.</p>
+        </details>
+
+        <details class="area">
+          <summary>
+            <span class="area-n">06</span>
+            <span style="flex:1">
+              <span class="area-title">Terapia de casal</span>
+              <span class="area-teaser">Recuperar a conexão a dois.</span>
+            </span>
+            <span class="area-plus" aria-hidden="true"></span>
+          </summary>
+          <p>Muitas vezes vista como remediativa, funciona sobretudo como fator protetor. Em casais que enfrentam infertilidade, endometriose ou disfunção sexual, ajuda a recuperar comunicação, intimidade e apoio mútuo.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== CITAÇÃO ===== -->
+    <section class="wrap quote-wrap">
+      <figure class="quote">
+        <div class="o1" aria-hidden="true"></div>
+        <div class="o2" aria-hidden="true"></div>
+        <img src="assets/logo-brown.png" alt="" width="88" height="88" loading="lazy">
+        <blockquote><p>Even the moon has many different phases — and they're all beautiful.</p></blockquote>
+      </figure>
+    </section>
+
+    <!-- ===== PRIMEIRA SESSÃO ===== -->
+    <section id="primeira-sessao" class="section passos">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">COMO FUNCIONA</p>
+          <h2>A tua primeira sessão, sem surpresas</h2>
+          <p>Saber o que esperar tira peso ao primeiro passo.</p>
+        </div>
+        <div class="passos-grid">
+          <div class="passo">
+            <div class="passo-top"><div class="passo-n">01</div><div class="passo-line"></div></div>
+            <h3>Primeiro contacto</h3>
+            <p>Escreves-me por WhatsApp ou email. Respondo às tuas dúvidas e vemos se sou a profissional indicada para o que precisas.</p>
+          </div>
+          <div class="passo">
+            <div class="passo-top"><div class="passo-n">02</div><div class="passo-line"></div></div>
+            <h3>Agendamento</h3>
+            <p>Combinamos dia e hora e recebes o link da videochamada. Não precisas de instalar nada.</p>
+          </div>
+          <div class="passo">
+            <div class="passo-top"><div class="passo-n">03</div><div class="passo-line"></div></div>
+            <h3>Primeira sessão</h3>
+            <p>Cerca de 50 minutos para conhecer a tua história, o que te trouxe até aqui e o que esperas do acompanhamento.</p>
+          </div>
+          <div class="passo">
+            <div class="passo-top"><div class="passo-n">04</div><div class="passo-line"></div></div>
+            <h3>Plano conjunto</h3>
+            <p>Definimos objetivos e frequência das sessões. O plano é teu e vai sendo ajustado ao teu ritmo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PERGUNTAS ===== -->
+    <section id="perguntas" class="wrap section">
+      <div class="faq-grid">
+        <div class="faq-intro">
+          <p class="eyebrow">PERGUNTAS FREQUENTES</p>
+          <h2>O que costumam perguntar-me antes de marcar</h2>
+          <p>Se ficar alguma dúvida, escreve-me. Respondo sempre antes de agendarmos.</p>
+          <a class="link-underline" style="font-weight:700" href="https://wa.me/351913572171">Enviar mensagem no WhatsApp →</a>
+        </div>
+        <div class="faq-list">
+          <details class="faq">
+            <summary>As consultas são só online?</summary>
+            <p>Sim. Neste momento acompanho exclusivamente em consulta online, por videochamada. Isso permite-me acompanhar pessoas em qualquer ponto do país ou no estrangeiro, com o mesmo enquadramento e confidencialidade de uma consulta presencial.</p>
+          </details>
+          <details class="faq">
+            <summary>Quanto tempo dura cada sessão?</summary>
+            <p>Cada sessão tem cerca de 50 minutos. A frequência é definida em conjunto na primeira sessão — habitualmente semanal ou quinzenal no início, espaçando à medida que os objetivos vão sendo atingidos.</p>
+          </details>
+          <details class="faq">
+            <summary>Qual é o valor da consulta?</summary>
+            <p>O valor é indicado no primeiro contacto, antes de qualquer agendamento, para que possas decidir com toda a informação. Envio também os dados necessários para reembolso, quando aplicável.</p>
+          </details>
+          <details class="faq">
+            <summary>O que preciso para uma consulta online?</summary>
+            <p>Um computador ou telemóvel com câmara, ligação estável à internet e um espaço onde te sintas à vontade para falar sem interrupções. Envio o link antes da sessão; não precisas de criar contas nem instalar programas.</p>
+          </details>
+          <details class="faq">
+            <summary>Posso fazer terapia de casal online?</summary>
+            <p>Sim. A terapia de casal funciona bem em formato online, desde que ambos possam estar no mesmo espaço, ou cada um no seu, com privacidade e sem interrupções.</p>
+          </details>
+          <details class="faq">
+            <summary>O que falamos fica confidencial?</summary>
+            <p>Sim. Tudo o que é partilhado em sessão está protegido por sigilo profissional, conforme o Código Deontológico da Ordem dos Psicólogos Portugueses. As sessões nunca são gravadas.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta">
+      <div class="cta-inner">
+        <img src="assets/logo-light.png" alt="" width="120" height="120" loading="lazy">
+        <h2>Vamos falar sobre o que estás a viver?</h2>
+        <p>Consultas online, em português. Escreve-me e marcamos a tua primeira sessão.</p>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="https://wa.me/351913572171">WhatsApp · 913 572 171</a>
+          <a class="btn btn-ghost" href="mailto:psi.danielapdsilva@gmail.com">Enviar email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/logo-light.png" alt="" width="54" height="54" loading="lazy">
+            <div>
+              <div class="footer-name">Dra. Daniela Silva</div>
+              <div class="footer-role">PSICÓLOGA CLÍNICA E DA SAÚDE</div>
+            </div>
+          </div>
+          <p class="footer-desc">Acompanhamento psicológico em endometriose, infertilidade e saúde sexual e reprodutiva. Consultas online.</p>
+        </div>
+        <div>
+          <div class="footer-h">CONTACTOS</div>
+          <div class="footer-links">
+            <a href="https://wa.me/351913572171">+351 913 572 171</a>
+            <a href="mailto:psi.danielapdsilva@gmail.com">psi.danielapdsilva@gmail.com</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-h">SEGUE-ME</div>
+          <div class="footer-links">
+            <a href="https://instagram.com/psi.danielapdsilva/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.linkedin.com/in/danielapdsilva/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.ladobetapodcast.pt/" target="_blank" rel="noopener">Lado Beta Podcast</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="c">© 2026 Daniela P. Silva. Todos os direitos reservados.</div>
+        <div class="m">Even the moon has many different phases.</div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-wa" href="https://wa.me/351913572171" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.35c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.26 8.24z"/></svg>
+  </a>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Psychologist",
+    "name": "Daniela P. Silva",
+    "description": "Psicóloga Clínica e da Saúde. Acompanhamento psicológico online em endometriose, infertilidade, dispareunia, gravidez, parentalidade e terapia de casal.",
+    "url": "https://www.danielapdsilva.com/",
+    "telephone": "+351913572171",
+    "email": "psi.danielapdsilva@gmail.com",
+    "areaServed": "PT",
+    "availableLanguage": "pt-PT",
+    "sameAs": [
+      "https://instagram.com/psi.danielapdsilva/",
+      "https://www.linkedin.com/in/danielapdsilva/",
+      "https://www.ladobetapodcast.pt/"
+    ]
+  }
+  </script>
+</body>
+
+</html>
